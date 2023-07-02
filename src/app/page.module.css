@@ -1,0 +1,101 @@
+.container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f6f8fa;
+  gap: 10px;
+}
+
+.content {
+  background-color: #ffffff;
+  height: 600px;
+  width: 400px;
+  border-radius: 5px;
+  border: 1px solid #d0d7de;
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 10px;
+  gap: 20px;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* new task */
+.newTask {
+  display: flex;
+  gap: 5px;
+  height: 35px;
+}
+
+.newTask input {
+  width: 90%;
+  padding: 5px 20px;
+  border: 1px solid #d0d7de;
+  outline: none;
+}
+
+.newTask button {
+  width: 10%;
+  background-color: #343a40;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Tasks List */
+.taskList {
+  width: 100%;
+  height: 100%;
+}
+
+.taskListUl {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.taskDiv {
+  width: 100%;
+  height: 30px;
+  padding: 5px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.taskDiv div {
+  display: flex;
+  gap: 5px;
+}
+
+.taskDiv li {
+  height: 100%;
+  font-weight: bold;
+
+}
+
+/* my tasks */
+.myTasks {
+  padding: 5px 20px;
+}
+
+/* msg */ 
+.msg {
+  height: 25px;
+  text-align: center;
+  font-size: 14px;
+}
+
+
