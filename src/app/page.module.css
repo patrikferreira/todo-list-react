@@ -5,20 +5,21 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #f6f8fa;
+  background-color: #ebf1f7;
   gap: 10px;
 }
 
 .content {
   background-color: #ffffff;
-  height: 600px;
-  width: 400px;
-  border-radius: 5px;
+  height: 500px;
+  width: 300px;
+  border-radius: 15px;
   border: 1px solid #d0d7de;
   display: flex;
-  flex-direction: column-reverse;
-  padding: 10px;
+  box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.16);
+  flex-direction: column;
   gap: 20px;
+  overflow: hidden;
 }
 
 .header {
@@ -28,27 +29,49 @@
   gap: 10px;
 }
 
+.barHeader {
+  border-bottom: 1px solid #d0d7de;
+  background-color: #f3f4f5;
+  height: 45px;
+  padding: 5px 20px;
+}
+
+.barHeader h1 {
+  font-size: 25px;
+}
+
 /* new task */
 .newTask {
   display: flex;
   gap: 5px;
   height: 35px;
+  padding: 0 20px;
 }
 
 .newTask input {
   width: 90%;
-  padding: 5px 20px;
-  border: 1px solid #d0d7de;
+  padding: 5px 0;
+  border: none;
   outline: none;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.newTask input::placeholder {
+  font-weight: bold;
+  font-size: 15px;
 }
 
 .newTask button {
-  width: 10%;
-  background-color: #343a40;
+  background-color: transparent;
+  width: 35px;
+  height: 35px;
   border: none;
   color: #fff;
   border-radius: 5px;
+  color: #007bff;
   cursor: pointer;
+  font-size: 25px;
   font-weight: bold;
 }
 
@@ -56,6 +79,7 @@
 .taskList {
   width: 100%;
   height: 100%;
+  padding: 20px;
 }
 
 .taskListUl {
@@ -69,10 +93,13 @@
 .taskDiv {
   width: 100%;
   height: 30px;
-  padding: 5px 20px;
+  /* padding: 5px 20px; */
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #f3f4f5;
+  padding: 0 5px;
+  border-radius: 5px;
 }
 
 .taskDiv div {
@@ -83,12 +110,8 @@
 .taskDiv li {
   height: 100%;
   font-weight: bold;
+  color: rgb(44, 44, 44);
 
-}
-
-/* my tasks */
-.myTasks {
-  padding: 5px 20px;
 }
 
 /* msg */ 
