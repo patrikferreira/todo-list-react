@@ -1,9 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&display=swap');
 
+:root {
+  --bg-container: #afb8c1;
+  --bg-content: #ffffff;
+  --font-size: 17px;
+  --color-default: rgb(36, 36, 36);
+  --box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.16);
+  --border-default: 1px solid #d0d7de;
+  --btn-color: #007bff;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Noto Sans', sans-serif;
   list-style: none;
+  font-size: var(--font-size);
+  color: var(--color-default);
 }

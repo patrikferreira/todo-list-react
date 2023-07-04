@@ -17,17 +17,21 @@ export default function Home() {
     <main className={styles.container}>
       <div className={styles.content}>
         <div className={styles.header}>
-          <div className={styles.barHeader}>
-            <h1>Todo List</h1>
-          </div>
-          <div className={styles.newTask}>
-            <input type="text" name="" id="" placeholder='New task' />
-            <button>&#43;</button>
-          </div>
+          <h1>Todo List</h1>
+        </div>
+  
+        <div className={styles.newTask}>
+          <input type="text" name="" id="" placeholder='New task' />
+          <button>&#43;</button>
         </div>
 
         <div className={styles.taskList}>
           <ul className={styles.taskListUl}>
+            <Task name='Exemplo 01' />
+            <Task name='Exemplo 02' />
+            <Task name='Exemplo 03' />
+            <Task name='Exemplo 04' />
+            <Task name='Exemplo 05' />
             <Task name='Exemplo 01' />
             <Task name='Exemplo 02' />
             <Task name='Exemplo 03' />
