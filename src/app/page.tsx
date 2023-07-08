@@ -2,17 +2,28 @@
 import { useState } from 'react'
 import styles from './page.module.css'
 import Task from './components/Task';
+import Input from './components/Input';
 
-type Task = {
-  name: string;
+type TaskObj = {
+  name: string,
+  id: number,
 }
 
 
 export default function Home() {
-  const [tasks, setTasks] = useState<Task[]>([]);
-  const [newTask, setNewTask] = useState<string>('');
+  const [tasks, setTasks] = useState<TaskObj[]>([]);
+  const [taskName, setTaskName] = useState<string>('');
   const [msg, setMsg] = useState<string>('');
 
+  function insertNewTask(task: TaskObj) {
+    setTasks([...tasks, task]);
+    setTaskName('');
+  }
+
+  function getInputValue(inputValue: string) {
+    setTaskName(inputValue);
+  }
+  
   return (
     <main className={styles.container}>
       <div className={styles.content}>
@@ -21,22 +32,17 @@ export default function Home() {
         </div>
   
         <div className={styles.newTask}>
-          <input type="text" name="" id="" placeholder='New task' />
-          <button>&#43;</button>
+          <Input sendInputValue={getInputValue} inputValueText={taskName}/>
+          <button onClick={() => {
+            insertNewTask({name: taskName, id: 1})
+          }}>&#43;</button>
         </div>
 
         <div className={styles.taskList}>
           <ul className={styles.taskListUl}>
-            <Task name='Exemplo 01' />
-            <Task name='Exemplo 02' />
-            <Task name='Exemplo 03' />
-            <Task name='Exemplo 04' />
-            <Task name='Exemplo 05' />
-            <Task name='Exemplo 01' />
-            <Task name='Exemplo 02' />
-            <Task name='Exemplo 03' />
-            <Task name='Exemplo 04' />
-            <Task name='Exemplo 05' />
+            {tasks.map(task => {
+              return <Task name={task.name} />
+            })}
           </ul>
         </div>
 

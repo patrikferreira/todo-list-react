@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "../page.module.css"
 
 type Props = {
-    name: string;
+    name: string,
 }
 
 export default function Task({name}: Props) {
