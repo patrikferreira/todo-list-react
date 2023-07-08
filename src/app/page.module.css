@@ -16,7 +16,6 @@
   border-radius: 15px;
   border: var(--border-default);
   display: flex;
-  box-shadow: var(--box-shadow);
   flex-direction: column;
   gap: 20px;
   overflow: hidden;
@@ -39,17 +38,19 @@
 /* new task */
 .newTask {
   display: flex;
-  gap: 5px;
   height: 35px;
   padding: 0 25px;
 }
 
 .newTask input {
-  width: 90%;
-  padding: 5px 0;
-  border: none;
+  width: 95%;
+  padding: 5px 10px;
+  border: var(--border-default);
   outline: none;
   font-weight: bold;
+  background-color: var(--bg-container);
+  color: var(--color-default);
+  border-radius: 3px;
 }
 
 .newTask input::placeholder {
@@ -62,15 +63,16 @@
   height: 35px;
   border: none;
   border-radius: 5px;
-  color: var(--btn-color);
   cursor: pointer;
-  font-size: 25px;
-  font-weight: bold;
   transition: .1s;
 }
 
-.newTask button:active {
-  font-size: 20px;
+.newTask button i {
+  color: var(--btn-color);
+}
+
+.newTask button i:active {
+  font-size: 15px;
 }
 
 /* tasks list */

@@ -11,13 +11,13 @@ export default function Task({name}: Props) {
     return <>
         <div className={styles.taskDiv}>
             <div>
-                <div className={styles.item}>&#10003;</div>
+                <div className={styles.item}><i className="fa-solid fa-check"></i></div>
                 <li>{name}</li>
             </div>
 
             <div>
-                <div className={styles.item}>&#9998;</div>
-                <div className={styles.item}>&#128465;</div>
+                <div className={styles.item}><i className="fa-solid fa-pen-to-square"></i></div>
+                <div className={styles.item}><i className="fa-solid fa-trash"></i></div>
             </div>
         </div>
     </>

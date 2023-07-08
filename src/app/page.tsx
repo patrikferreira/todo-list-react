@@ -35,7 +35,7 @@ export default function Home() {
           <Input sendInputValue={getInputValue} inputValueText={taskName}/>
           <button onClick={() => {
             insertNewTask({name: taskName, id: 1})
-          }}>&#43;</button>
+          }}><i className="fa-solid fa-plus"></i></button>
         </div>
 
         <div className={styles.taskList}>
