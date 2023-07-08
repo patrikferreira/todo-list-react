@@ -15,9 +15,15 @@ export default function Home() {
   const [taskName, setTaskName] = useState<string>('');
   const [msg, setMsg] = useState<string>('');
 
+
   function insertNewTask(task: TaskObj) {
-    setTasks([...tasks, task]);
-    setTaskName('');
+    if(taskName !== '') {
+      setTasks([...tasks, task]);
+      setTaskName('');
+      setMsg('');
+    } else{
+      setMsg('Enter the new task!')
+    }
   }
 
   function getInputValue(inputValue: string) {
