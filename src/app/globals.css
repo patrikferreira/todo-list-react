@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&display=swap');
 
 :root {
-  --bg-main: #2c84db;
-  --bg-container: #ffffff;
+  --bg-main: #3b8ad8;
+  --bg-container: #eeeeee;
   --border-default: 1px solid #d0d7de;
-  --box-shadow: 10px 10px 19px -4px rgba(0,0,0,0.17);
+  --box-shadow: 10px 10px 19px -4px rgba(0, 0, 0, 0.26);
   --bg-button: #2c84db;
 }
 
