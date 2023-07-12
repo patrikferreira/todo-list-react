@@ -1,131 +1,91 @@
-.container {
+
+/* ---------- main  */
+.main {
   height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--bg-container);
   gap: 10px;
+  background-color: var(--bg-main);
 }
 
-.content {
-  background-color: var(--bg-content);
-  height: 530px;
-  width: 300px;
-  border-radius: 15px;
-  border: var(--border-default);
+/* ---------- container */
+.container {
   display: flex;
+  gap: 40px;
+  height: 450px;
+  width: 300px;
+  border-radius: 10px;
+  background-color: var(--bg-container);
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+  /* overflow: hidden; */
+}
+
+/* ---------- user */
+.user {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-direction: column-reverse;
+  height: 100%;
+  width: 100%;
+}
+
+.userForm {
+  display: flex;
+  align-items: center;
+  gap: 5px;
   flex-direction: column;
-  gap: 20px;
-  overflow: hidden;
+  width: 260px;
+}
+
+.userForm input {
+  outline: none;
+  border: none;
+  text-align: center;
+  height: 30px;
+}
+
+.userForm button {
+  border: none;
+  height: 30px;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: var(--bg-button);
+  color: #fff;
+  font-size: 17px;
+}
+
+/* ---------- */
+.todoList {
+  width: 100%;
+  height: 100%;
 }
 
 .header {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  border-bottom: var(--border-default);
-  height: 60px;
-  padding: 5px 20px;
-}
-
-.header h1 {
-  font-size: 27px;
-}
-
-/* new task */
-.newTask {
-  display: flex;
-  height: 35px;
-  padding: 0 25px;
-}
-
-.newTask input {
-  width: 95%;
-  padding: 5px 10px;
-  border: var(--border-default);
-  outline: none;
-  font-weight: bold;
-  background-color: var(--bg-container);
-  color: var(--color-default);
-  border-radius: 3px;
-}
-
-.newTask input::placeholder {
-  font-weight: bold;
-}
-
-.newTask button {
-  background-color: transparent;
-  width: 35px;
-  height: 35px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: .1s;
-}
-
-.newTask button i {
-  color: var(--btn-color);
-}
-
-.newTask button i:active {
-  font-size: 15px;
-}
-
-/* tasks list */
-.taskList {
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-}
-
-.taskListUl {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.taskDiv {
-  width: 100%;
-  height: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.taskDiv div {
-  display: flex;
-  gap: 5px;
-}
-
-.taskDiv li {
-  height: 100%;
-  font-weight: bold;
-}
-
-.taskDiv .item {
-  width: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.header button {
+  border: none;
+  background-color: #fff;
   cursor: pointer;
-  transition: .1s;
+  font-size: 20px;
 }
 
-.taskDiv .item:active {
-  font-size: 15px;
+.header .userDiv {
+  display: flex;
+  align-items: center;
+  gap: 2px;
 }
 
-/* msg */ 
-.msg {
-  height: 25px;
-  text-align: center;
-  font-size: 14px;
+.userDiv span:last-child {
+  font-size: 25px;
 }
-
 

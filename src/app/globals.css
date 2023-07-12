@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&display=swap');
 
 :root {
-  --bg-container: #23272a;
-  --bg-content: #2c2f33;
-  --font-size: 17px;
-  --color-default: #f3f1f1;
-  --border-default: 1px solid #181818;
-  --btn-color: #007bff;
+  --bg-main: #2c84db;
+  --bg-container: #ffffff;
+  --border-default: 1px solid #d0d7de;
+  --box-shadow: 10px 10px 19px -4px rgba(0,0,0,0.17);
+  --bg-button: #2c84db;
 }
 
 * {
@@ -15,6 +14,4 @@
   box-sizing: border-box;
   font-family: 'Noto Sans', sans-serif;
   list-style: none;
-  font-size: var(--font-size);
-  color: var(--color-default);
 }

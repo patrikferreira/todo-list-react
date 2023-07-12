@@ -1,60 +1,21 @@
 "use client"
 import { useState } from 'react'
 import styles from './page.module.css'
-import Task from './components/Task';
-import Input from './components/Input';
-
-type TaskObj = {
-  name: string,
-  id: number,
-}
-
+import Todo from './components/Todo';
+import User from './components/User';
 
 export default function Home() {
-  const [tasks, setTasks] = useState<TaskObj[]>([]);
-  const [taskName, setTaskName] = useState<string>('');
-  const [msg, setMsg] = useState<string>('');
+  const [userActive, setUserActive] = useState<boolean>(true);
 
-
-  function insertNewTask(task: TaskObj) {
-    if(taskName !== '') {
-      setTasks([...tasks, task]);
-      setTaskName('');
-      setMsg('');
-    } else{
-      setMsg('Enter the new task!')
-    }
+  function getCheckUser(user: boolean) {
+   setUserActive(user);
   }
 
-  function getInputValue(inputValue: string) {
-    setTaskName(inputValue);
-  }
-  
   return (
-    <main className={styles.container}>
-      <div className={styles.content}>
-        <div className={styles.header}>
-          <h1>Todo List</h1>
-        </div>
-  
-        <div className={styles.newTask}>
-          <Input sendInputValue={getInputValue} inputValueText={taskName}/>
-          <button onClick={() => {
-            insertNewTask({name: taskName, id: 1})
-          }}><i className="fa-solid fa-plus"></i></button>
-        </div>
-
-        <div className={styles.taskList}>
-          <ul className={styles.taskListUl}>
-            {tasks.map(task => {
-              return <Task name={task.name} />
-            })}
-          </ul>
-        </div>
-
+    <main className={styles.main}>
+      <div className={styles.container}>
+        {userActive ? (<User sendUserActive={getCheckUser} />) : (<Todo sendUserActive={getCheckUser} />)}
       </div>
-
-      <span className={styles.msg}>{msg}</span>
     </main>
     
   )
