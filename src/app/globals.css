@@ -2,10 +2,12 @@
 
 :root {
   --bg-main: #3b8ad8;
-  --bg-container: #eeeeee;
+  --bg-container: #faf8f8;
   --border-default: 1px solid #d0d7de;
-  --box-shadow: 10px 10px 19px -4px rgba(0, 0, 0, 0.26);
+  --box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.3);
   --bg-button: #2c84db;
+  --btn-edit: #ffc107;
+  --btn-delete: #494949;
 }
 
 * {

@@ -1,4 +1,3 @@
-
 /* ---------- main  */
 .main {
   height: 100vh;
@@ -14,8 +13,9 @@
 /* ---------- container */
 .container {
   display: flex;
-  gap: 40px;
-  height: 450px;
+  flex-direction: column;
+  gap: 25px;
+  height: 480px;
   width: 300px;
   border-radius: 10px;
   background-color: var(--bg-container);
@@ -24,13 +24,132 @@
   position: relative;
 }
 
-/* ------------ header */
+/* ----------- header */
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 10px 20px;
   width: 100%;
   font-size: 17px;
   font-weight: bold;
+  height: 50px;
 }
 
+/* ---------- homePage */
+.homePage {
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.imgHomePage {
+  height: 150px;
+  width: 150px;
+}
+
+.imgHomePage img {
+  height: 90%;
+}
+
+.description {
+  text-align: center;
+}
+
+.startButton {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--bg-button);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: var(--box-shadow);
+}
+
+/* ---------- todoLit */
+.todoList {
+  height: 100%;
+  padding: 0 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todoList .formDiv {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 25px;
+  width: 85%;
+  box-shadow: var(--box-shadow);
+}
+
+.formDiv input {
+  border: none;
+  outline: none;
+  text-align: center;
+  height: 100%;
+  border-radius: 25px;
+  background-color: transparent;
+}
+
+.formDiv button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--bg-button);
+  color: #fff;
+  cursor: pointer;
+}
+
+.list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.taskDiv {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  box-shadow: var(--box-shadow);
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 7px;
+}
+
+.itens {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.check {
+  color: rgb(34, 34, 34);
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.edit {
+  color: var(--btn-edit);
+  cursor: pointer;
+}
+
+.delete {
+  color: var(--btn-delete);
+  cursor: pointer;
+}
