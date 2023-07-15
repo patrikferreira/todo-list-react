@@ -47,7 +47,7 @@ export default function Todo({sendTodoMsg, count}: Props) {
         const updateTasks = tasks.filter(task => task.id !== id);
         setTasks(updateTasks);
         sendTodoMsg('');
-        count(tasks.length <= 8 ? tasks.length - 1 : 8)
+        count(tasks.length - 1);
     }
 
     function checkTask(id: number) {
@@ -59,9 +59,20 @@ export default function Todo({sendTodoMsg, count}: Props) {
             }
         })
         setTasks(updateTasks);
-    } 
-    
+    }
 
+    function editTask(id: number) {
+        const updatedTasks = tasks.map(task => {
+            if(task.id === id) {
+                const newNameTask = prompt('') as string;
+                return {...task, name: newNameTask}
+            } else {
+                return task;
+            }
+        })
+        setTasks(updatedTasks);
+    }
+    
     return (
         <div className={styles.todoList}>
             <ul className={styles.list}>
@@ -71,7 +82,9 @@ export default function Todo({sendTodoMsg, count}: Props) {
                         deleteTask(task.id);
                     }} checkTask={() => {
                         checkTask(task.id);
-                    }}  />
+                    }} editTask={() => {
+                        editTask(task.id);
+                    }} />
                 })}
             </ul>
 
