@@ -36,6 +36,18 @@
   height: 50px;
 }
 
+.amount {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.header i {
+  color: var(--btn-edit);
+  font-size: 20px;
+  margin-right: 10px;
+}
+
 /* ---------- homePage */
 .homePage {
   height: 100%;
@@ -68,6 +80,10 @@
   color: #fff;
   cursor: pointer;
   box-shadow: var(--box-shadow);
+}
+
+.startButton:active {
+  font-size: 10px;
 }
 
 /* ---------- todoLit */
@@ -163,9 +179,17 @@
   cursor: pointer;
 }
 
+.edit:active {
+  transform: scale(0.8);
+}
+
 .delete {
   color: var(--btn-delete);
   cursor: pointer;
+}
+
+.delete:active {
+  transform: scale(0.8);
 }
 
 /* ---------- msg */

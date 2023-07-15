@@ -7,6 +7,7 @@ import Todo from './components/Todo'
 export default function Home() {
   const [homeActive, setHomeActive] = useState<boolean>(true);
   const [msg, setMsg] = useState<string>('');
+  const [amount, setAmount] = useState<number>(0);
 
   function heandleClick() {
     setHomeActive(false);
@@ -15,12 +16,16 @@ export default function Home() {
   function handleTodoMsg(todoMsg: string) {
     setMsg(todoMsg);
   }
+
+  function count(amount: number) {
+    setAmount(amount);
+  }
   
   return (
     <main className={styles.main}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <span></span>
+          {homeActive === false ? (<span className={styles.amount}><i className="fa-solid fa-thumbtack"></i>{amount + '/8'}</span>) : (<span></span>)}
           <span>Todo List</span>
         </div>
 
@@ -37,7 +42,7 @@ export default function Home() {
               <button className={styles.startButton} onClick={heandleClick}><i className="fa-solid fa-plus"></i></button>
             </div>
           </div>
-        ) : (<Todo sendTodoMsg={handleTodoMsg}/>)}
+        ) : (<Todo sendTodoMsg={handleTodoMsg} count={count}/>)}
         
       </div>
       <div className={styles.msg}>

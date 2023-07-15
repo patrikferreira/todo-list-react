@@ -11,10 +11,11 @@ type TaskObj = {
 }
 
 type Props = {
-    sendTodoMsg: (msg: string) => void;
+    sendTodoMsg: (msg: string) => void,
+    count: (amount: number) => void,
 }
 
-export default function Todo({sendTodoMsg}: Props) {
+export default function Todo({sendTodoMsg, count}: Props) {
     const [tasks, setTasks] = useState<TaskObj[]>([]);
     const [taskName, setTaskName] = useState<string>('');
     const [id, setId] = useState<number>(1);
@@ -34,7 +35,6 @@ export default function Todo({sendTodoMsg}: Props) {
             setTaskName('');
             setId(id + 1);
             sendTodoMsg('');
-            console.log(id);
         } else if(tasks.length <8 && taskName == '') {
             return;
         } else {
@@ -47,6 +47,7 @@ export default function Todo({sendTodoMsg}: Props) {
         const updateTasks = tasks.filter(task => task.id !== id);
         setTasks(updateTasks);
         sendTodoMsg('');
+        count(tasks.length <= 8 ? tasks.length - 1 : 8)
     }
 
     function checkTask(id: number) {
@@ -76,7 +77,10 @@ export default function Todo({sendTodoMsg}: Props) {
 
             <div className={styles.formDiv}>
                 <Input sendInputValue={getInputValue} inputValueText={taskName}/>
-                <button onClick={addTask}><i className="fa-solid fa-plus"></i></button>
+                <button onClick={() => {
+                    addTask();
+                    count(tasks.length < 8 ? tasks.length + 1 : 8);
+                }}><i className="fa-solid fa-plus"></i></button>
             </div>
         </div>
     )
