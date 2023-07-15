@@ -7,6 +7,7 @@ import Input from './Input'
 type TaskObj = {
     name: string,
     id: number,
+    isCheck: boolean,
 }
 
 type Props = {
@@ -27,6 +28,7 @@ export default function Todo({sendTodoMsg}: Props) {
             const newTask: TaskObj = {
                 name: taskName,
                 id: id,
+                isCheck: false,
             }
             setTasks([...tasks, newTask]);
             setTaskName('');
@@ -47,13 +49,28 @@ export default function Todo({sendTodoMsg}: Props) {
         sendTodoMsg('');
     }
 
+    function checkTask(id: number) {
+        const updateTasks = tasks.map(task => {
+            if(task.id === id) {
+                return {...task, isCheck: !task.isCheck}
+            } else {
+                return task;
+            }
+        })
+        setTasks(updateTasks);
+    } 
+    
+
     return (
         <div className={styles.todoList}>
             <ul className={styles.list}>
                 {tasks.map(task => {
-                    return <Task name={task.name} key={task.id} deleteTask={() => {
+                    const taskStyle = task.isCheck ? styles.completedTask : styles.taskLi;
+                    return <Task name={task.name} key={task.id} taskStyle={taskStyle} deleteTask={() => {
                         deleteTask(task.id);
-                    }} />
+                    }} checkTask={() => {
+                        checkTask(task.id);
+                    }}  />
                 })}
             </ul>
 

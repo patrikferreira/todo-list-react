@@ -107,6 +107,11 @@
   background-color: var(--bg-button);
   color: #fff;
   cursor: pointer;
+  transform: scale(0.8);
+}
+
+.formDiv button:active {
+  font-size: 10px;
 }
 
 .list {
@@ -142,6 +147,10 @@
   align-items: center;
   font-size: 12px;
   cursor: pointer;
+}
+
+.check:active {
+  transform: scale(0.8);
 }
 
 .completedTask {

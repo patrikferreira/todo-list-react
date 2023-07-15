@@ -4,17 +4,18 @@ import styles from '../page.module.css'
 
 type Props = {
   name: string,
-  deleteTask: () => void;
+  deleteTask: () => void,
+  checkTask: () => void,
+  taskStyle: string,
 }
 
-export default function Task({name, deleteTask}: Props) {
+export default function Task({name, deleteTask, checkTask, taskStyle}: Props) {
   
-
   return (
     <div className={styles.taskDiv}>
       <div className={styles.itens}>
-        <span className={styles.check}><i className="fa-solid fa-check"></i></span>
-        <li>{name}</li>
+        <span className={styles.check} onClick={checkTask}><i className="fa-solid fa-check"></i></span>
+        <li className={taskStyle}>{name}</li>
       </div>
 
       <div className={styles.itens}>
