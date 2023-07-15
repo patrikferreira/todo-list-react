@@ -6,9 +6,14 @@ import Todo from './components/Todo'
 
 export default function Home() {
   const [homeActive, setHomeActive] = useState<boolean>(true);
+  const [msg, setMsg] = useState<string>('');
 
   function heandleClick() {
     setHomeActive(false);
+  }
+
+  function handleTodoMsg(todoMsg: string) {
+    setMsg(todoMsg);
   }
   
   return (
@@ -32,8 +37,11 @@ export default function Home() {
               <button className={styles.startButton} onClick={heandleClick}><i className="fa-solid fa-plus"></i></button>
             </div>
           </div>
-        ) : (<Todo />)}
+        ) : (<Todo sendTodoMsg={handleTodoMsg}/>)}
         
+      </div>
+      <div className={styles.msg}>
+        <p>{msg}</p>
       </div>
     </main>
   )

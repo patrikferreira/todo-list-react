@@ -144,6 +144,11 @@
   cursor: pointer;
 }
 
+.completedTask {
+  text-decoration: line-through;
+  opacity: .5;
+}
+
 .edit {
   color: var(--btn-edit);
   cursor: pointer;
@@ -152,4 +157,10 @@
 .delete {
   color: var(--btn-delete);
   cursor: pointer;
+}
+
+/* ---------- msg */
+.msg {
+  height: 20px;
+  font-size: 14px;
 }

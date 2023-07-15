@@ -9,7 +9,11 @@ type TaskObj = {
     id: number,
 }
 
-export default function Todo() {
+type Props = {
+    sendTodoMsg: (msg: string) => void;
+}
+
+export default function Todo({sendTodoMsg}: Props) {
     const [tasks, setTasks] = useState<TaskObj[]>([]);
     const [taskName, setTaskName] = useState<string>('');
     const [id, setId] = useState<number>(1);
@@ -19,21 +23,37 @@ export default function Todo() {
     }
 
     function addTask() {
-        const newTask: TaskObj = {
-            name: taskName,
-            id: id,
+        if(tasks.length < 8 && taskName != '') {
+            const newTask: TaskObj = {
+                name: taskName,
+                id: id,
+            }
+            setTasks([...tasks, newTask]);
+            setTaskName('');
+            setId(id + 1);
+            sendTodoMsg('');
+            console.log(id);
+        } else if(tasks.length <8 && taskName == '') {
+            return;
+        } else {
+            sendTodoMsg('Reached maximum tasks!');
+            setTaskName('');
         }
-        setTasks([...tasks, newTask]);
-        setTaskName('');
-        setId(id + 1);
-        console.log(id)
+    }
+
+    function deleteTask(id: number) {
+        const updateTasks = tasks.filter(task => task.id !== id);
+        setTasks(updateTasks);
+        sendTodoMsg('');
     }
 
     return (
         <div className={styles.todoList}>
             <ul className={styles.list}>
                 {tasks.map(task => {
-                    return <Task name={task.name} key={task.id}/>
+                    return <Task name={task.name} key={task.id} deleteTask={() => {
+                        deleteTask(task.id);
+                    }} />
                 })}
             </ul>
 
